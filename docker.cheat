@@ -1,0 +1,38 @@
+% docker
+
+# mvn maven
+docker create -it --name maven -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.3-jdk-8 bash
+
+# gradle
+docker run -it --name gradle -u gradle -v "$(pwd)":/home/gradle/project -w /home/gradle/project gradle bash
+
+# adoptopenjdk11
+docker run -it --name jdk11 -v "$(pwd)":/opt/app -w /opt/app adoptopenjdk:11-jdk-hotspot bash
+
+# adoptopenjdk8
+docker run -it --name jdk11 -v "$(pwd)":/opt/app -w /opt/app adoptopenjdk:8-jdk-hotspot bash
+
+# python
+docker run -it --name python -v "$PWD":/usr/src/myapp -w /usr/src/myapp -p 8089:8089 python:3 bash
+
+# rust
+docker run -it --name rust --user "$(id -u)":"$(id -g)" -v "$PWD":/usr/src/myapp -w /usr/src/myapp rust:1
+
+# golang
+docker run -it --name golang -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.13 bash
+
+# gcc
+docker run -it --name gcc -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:4.9 bash
+
+# uaac
+docker create -it --name uaac -v "${HOME}"/.local/uaac:/root governmentpaas/cf-uaac sh
+
+# nodejs
+docker run -it --rm --name my-running-script -v "$PWD":/usr/src/app -w /usr/src/app node:8 bash
+
+
+# ubuntu
+docker run -it --name ubuntu ubuntu
+
+# powershell
+docker create -it --name powershellcore -v "$PWD":/usr/src/myapp -v "${HOME}/Downloads/vSphere/NestedLab":/usr/src/ovas -w /usr/src/myapp mcr.microsoft.com/powershell
