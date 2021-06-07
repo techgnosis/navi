@@ -10,7 +10,7 @@ docker run -it --name gradle -u gradle -v "$(pwd)":/home/gradle/project -w /home
 docker run -it --name jdk11 -v "$(pwd)":/opt/app -w /opt/app adoptopenjdk:11-jdk-hotspot bash
 
 # adoptopenjdk8
-docker run -it --name jdk11 -v "$(pwd)":/opt/app -w /opt/app adoptopenjdk:8-jdk-hotspot bash
+docker run -it --name jdk8 -v "$(pwd)":/opt/app -w /opt/app adoptopenjdk:8-jdk-hotspot bash
 
 # python
 docker run -it --name python -v "$PWD":/usr/src/myapp -w /usr/src/myapp -p 8089:8089 python:3 bash
