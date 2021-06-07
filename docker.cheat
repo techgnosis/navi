@@ -28,7 +28,7 @@ docker run -it --name gcc -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:4.9 bas
 docker create -it --name uaac -v "${HOME}"/.local/uaac:/root governmentpaas/cf-uaac sh
 
 # nodejs
-docker run -it --rm --name my-running-script -v "$PWD":/usr/src/app -w /usr/src/app node:8 bash
+docker run -it --rm --name my-running-script -v "$PWD":/usr/src/app -w /usr/src/app node:14 bash
 
 
 # ubuntu
