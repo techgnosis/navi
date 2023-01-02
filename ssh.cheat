@@ -1,7 +1,4 @@
 % ssh
 
-# flatcar
-ssh james@top.rack.lab.home
-
 # pi
 ssh pi@pi.lab.home

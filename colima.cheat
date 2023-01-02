@@ -1,0 +1,4 @@
+% colima
+
+# Hypervisor.Framework with containerd
+colima start --vm-type vz --runtime containerd
