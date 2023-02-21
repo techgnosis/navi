@@ -13,7 +13,7 @@ colima nerdctl run -- -it --name jdk11 -v "$(pwd)":/opt/app -w /opt/app adoptope
 colima nerdctl run -- -it --name jdk8 -v "$(pwd)":/opt/app -w /opt/app adoptopenjdk:8-jdk-hotspot bash
 
 # python
-colima nerdctl run -- -it --name python -v "$PWD":/usr/src/myapp -w /usr/src/myapp -p 8089:8089 python:3 bash
+colima nerdctl run -- -it --rm --name python -v "$PWD":/usr/src/myapp -w /usr/src/myapp -p 8089:8089 python:3 bash
 
 # rust
 colima nerdctl run -- -it --name rust --user "$(id -u)":"$(id -g)" -v "$PWD":/usr/src/myapp -w /usr/src/myapp rust:1
@@ -29,4 +29,4 @@ colima nerdctl run -- -it --rm --name my-running-script -v "$PWD":/usr/src/app -
 
 
 # ubuntu
-colima nerdctl run -- -it --name ubuntu ubuntu
+colima nerdctl run -- -it --name ubuntu -v "$PWD":/root ubuntu
